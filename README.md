@@ -28,7 +28,7 @@ npm test
 
 | 名称     | 类型   | 定义        | 必需 | 默认值 | 说明|
 | ------------- |:-------------:| :-----:|------------- |:-------------:| -----:|
-|app | string | 应用名   |   N  | default    | 作用于name和id字段|
+|app | string | 应用名   |   N  | default    | |
 
 响应：文件流
 
@@ -39,9 +39,9 @@ npm test
 
 | 名称     | 类型   | 定义        | 必需 | 默认值 | 说明|
 | ------------- |:-------------:| :-----:|------------- |:-------------:| -----:|
-|app | string | 应用名   |   N  | "default"  | 作用于name和id字段|
+|app | string | 应用名   |   N  | "default"  | |
 |hash | string | hash算法   |   N  | "md5"  | | 
-|sign | string | 应用名   |   N  |  "RSA-SHA256"  | openssl list-public-key-algorithms 中列出的算法| 
+|sign | string | 签名算法   |   N  |  "RSA-SHA256"  | openssl list-public-key-algorithms 中列出的算法| 
 |format | string | 返回签名的格式  |   N  | "binary" | 可为 "hex", "base64", "binary" |
 
 响应：文件流
