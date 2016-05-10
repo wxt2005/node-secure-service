@@ -33,7 +33,7 @@ describe('sign', function(){
 			.set('Content-type', 'multipart/form-data')
 			.attach('file', new Buffer(0))
 			.expect(200, {
-		    	error : 'empty file'
+		    	error : 'miss file'
 		    }, done);
 	});
 	it('should return private key not found', function(done){
