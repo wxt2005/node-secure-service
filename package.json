@@ -1,0 +1,27 @@
+{
+  "name": "secure-service",
+  "version": "0.0.1",
+  "description": "secure service for sign, md5, ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --harmony -t 5000"
+  },
+  "keywords": [
+    "node",
+    "sign",
+    "md5"
+  ],
+  "author": "yanSun",
+  "license": "MIT",
+  "dependencies": {
+    "co": "^4.6.0",
+    "co-busboy": "^1.3.1",
+    "koa": "^1.2.0",
+    "koa-json-error": "^1.0.1",
+    "koa-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
+  }
+}
