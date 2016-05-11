@@ -1,11 +1,11 @@
 {
 	"sign" : {
 		"dxydoctor" : {
-			"private" : "/Users/yanhaibiao/code/secure-service/private.pem",
+			"private" : "/Users/yanhaibiao/code/secure-service/private1.pem",
 			"public" : "/Users/yanhaibiao/code/secure-service/public.pem"
 		},
 		"default": {
-			"private" : "/Users/yanhaibiao/code/secure-service/private.pem",
+			"private" : "/Users/yanhaibiao/code/secure-service/private1.pem",
 			"public" : "/Users/yanhaibiao/code/secure-service/public.pem"
 		}
 	}

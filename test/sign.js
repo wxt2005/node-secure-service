@@ -20,9 +20,17 @@ describe('sign', function(){
 		       done();
 		    });
 	});
+	it('should return content-type must be multipart/form-data', function(done){
+		request(app.listen())
+			.post('/sign')
+			.expect(200, {
+		    	error : 'content-type must be multipart/form-data'
+		    }, done);
+	});
 	it('should return miss file error', function(done){
 		request(app.listen())
 			.post('/sign')
+			.set('Content-type', 'multipart/form-data')
 			.expect(200, {
 		    	error : 'miss file'
 		    }, done);
