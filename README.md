@@ -10,6 +10,29 @@
 git clone git@gitlab.dxy.net:f2e/secure-service.git
 cd secure-service
 npm install
+```
+
+配置`lib/config.json`中的密钥
+
+```json
+{
+	"sign" : {
+		"dxydoctor" : { //应用名
+			"private" : "/Users/yanhaibiao/code/secure-service/private1.pem", //密钥存放路径
+			"public" : "/Users/yanhaibiao/code/secure-service/public.pem"
+		},
+		"default": { //默认应用
+			"private" : "/Users/yanhaibiao/code/secure-service/private1.pem", 
+			"public" : "/Users/yanhaibiao/code/secure-service/public.pem"
+		}
+	}
+}
+
+```
+
+启动server
+
+```shell
 node --harmony index.js
 ```
 
