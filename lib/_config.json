@@ -1,12 +1,12 @@
 {
 	"sign" : {
 		"dxydoctor" : {
-			"private" : "/Users/yanhaibiao/code/secure-service/private1.pem",
-			"public" : "/Users/yanhaibiao/code/secure-service/public.pem"
+			"private" : "/Users/yanhaibiao/code/secure-service/rsa_private_key1.pem",
+			"public" : "/Users/yanhaibiao/code/secure-service/rsa_public_key.pem"
 		},
 		"default": {
-			"private" : "/Users/yanhaibiao/code/secure-service/private1.pem",
-			"public" : "/Users/yanhaibiao/code/secure-service/public.pem"
+			"private" : "/Users/yanhaibiao/code/secure-service/rsa_private_key1.pem",
+			"public" : "/Users/yanhaibiao/code/secure-service/rsa_public_key.pem"
 		}
 	}
 }

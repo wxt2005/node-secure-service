@@ -66,7 +66,7 @@ describe('sign', function(){
 				hash.update(fs.readFileSync(path.resolve('./test/origin.txt')));
 				var verify = crypto.createVerify('SHA256');
 				verify.update(hash.digest());
-				assert(verify.verify(fs.readFileSync(path.resolve('./public.pem')), res.text, 'base64'));
+				assert(verify.verify(fs.readFileSync(path.resolve('./rsa_public_key.pem')), res.text, 'base64'));
 				done();
 		    });
 	});
