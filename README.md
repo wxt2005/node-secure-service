@@ -6,6 +6,14 @@
 
 ## deloy 
 
+安装 node 稳定版本 
+
+```
+sudo npm install -g n
+n stable
+```
+------
+
 ```shell
 curl http://npmjs.org/install.sh | sudo sh
 git clone git@gitlab.dxy.net:f2e/secure-service.git
@@ -45,7 +53,7 @@ openssl genrsa -out rsa_private_key.pem 1024
 #生成公钥
 openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
 #将RSA私钥转换成PKCS8格式,解决java对私钥读取问题
-openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out rsa_private_key.pem
+openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out rsa_private_key1.pem
 ```
 
 ## test
