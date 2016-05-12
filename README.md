@@ -6,19 +6,34 @@
 
 ## deloy 
 
+安装 npm
+
+`curl http://npmjs.org/install.sh | sudo sh`
+
 安装 node 稳定版本 
 
 ```
 sudo npm install -g n
 n stable
 ```
-------
+
+部署
 
 ```shell
-curl http://npmjs.org/install.sh | sudo sh
 git clone git@gitlab.dxy.net:f2e/secure-service.git
 cd secure-service
 npm install
+```
+
+密钥生成
+
+```shell
+#生成私钥pem
+openssl genrsa -out rsa_private_key.pem 1024
+#生成公钥
+openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
+#将RSA私钥转换成PKCS8格式
+openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out rsa_private_key1.pem
 ```
 
 配置`lib/config.json`中的密钥
@@ -45,18 +60,6 @@ npm install
 node --harmony index.js
 ```
 
-## 密钥生成
-
-```shell
-#生成私钥pem
-openssl genrsa -out rsa_private_key.pem 1024
-#生成公钥
-openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
-#将RSA私钥转换成PKCS8格式,解决java对私钥读取问题
-openssl pkcs8 -topk8 -inform PEM -in private.pem -outform PEM -nocrypt 
-openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out rsa_private_key1.pem
-```
-
 ## test
 
 ```shell
@@ -64,6 +67,7 @@ npm test
 ```
 
 ## api
+
 接口：GET`/sign`
 
 描述: 获取应用签名的公钥
@@ -74,10 +78,13 @@ npm test
 | ------------- |:-------------:| :-----:|------------- |:-------------:| -----:|
 |app | string | 应用名   |   N  | default    | |
 
-响应：文件流
+响应：
+
+- 200 文件流
+- 400 {"error" : "error message"}
 
 --------------------------------------------------
-接口: POST `/sign`
+接口: POST `/sign` Content-type : multipart/form-data
 
 描述: 对文件进行签名
 
@@ -88,7 +95,10 @@ npm test
 |sign | string | 签名算法   |   N  |  "RSA-SHA256"  | openssl list-public-key-algorithms 中列出的算法| 
 |format | string | 返回签名的格式  |   N  | "binary" | 可为 "hex", "base64", "binary" |
 
-响应：文件流
+响应：
+
+- 200 文件流
+- 400 {"error" : "error message"}
 
 --------------------------------------------------
 
